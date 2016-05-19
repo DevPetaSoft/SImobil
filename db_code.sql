@@ -51,6 +51,7 @@ CREATE TABLE IF NOT EXISTS `db_simobil`.`si_imovel` (
   `si_endereco_idsi_endereco` INT NOT NULL,
   `si_imobiliaria_id` INT NOT NULL,
   `codigo` VARCHAR(10) NOT NULL,
+  `regiao` VARCHAR(100) NULL,
   PRIMARY KEY (`id`, `si_endereco_idsi_endereco`, `si_imobiliaria_id`),
   UNIQUE INDEX `id_UNIQUE` (`id` ASC),
   INDEX `fk_si_imovel_si_endereco1_idx` (`si_endereco_idsi_endereco` ASC),
