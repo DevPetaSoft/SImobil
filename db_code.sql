@@ -12,6 +12,7 @@ CREATE TABLE IF NOT EXISTS `db_simobil`.`si_endereco` (
   `numero` INT NULL,
   `estado` VARCHAR(45) NULL,
   `cep` VARCHAR(45) NULL,
+  `complemento` VARCHAR(45) NULL,
   PRIMARY KEY (`id`))
 ENGINE = InnoDB;
 

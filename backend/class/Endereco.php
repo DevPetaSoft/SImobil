@@ -9,6 +9,7 @@ class Endereco{
 	private $numero;
 	private $estado;
 	private $cep;
+	private $complemento;
 
 	//Construtor padrão
 	public function __construct(){
@@ -70,6 +71,14 @@ class Endereco{
 
 	public function setCep($cep){
 		$this->cep = $cep;
+	}
+
+	public function getComplemento(){
+		return $this->complemento;
+	}
+
+	public function setComplemento($complemento){
+		$this->complemento = $complemento;
 	}
 }
 
