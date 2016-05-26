@@ -33,7 +33,7 @@ class Login{
 		return $this->senha;
 	}
 	public function setSenha($senha){
-		$this->senha = $senha;
+		$this->senha = hash('sha512',$senha);
 	}
 
 	public function getPermicao(){
