@@ -5,11 +5,12 @@ class FotoImovel{
 
 	private $id;
 	private $photoLink;
+	private $imovelId;
 
 
     //Construtor padrão
-	public function __construct(){
-		$this->imovel = new Imovel();
+	public function __construct($imovelId){
+		$this->imovelId = $imovelId;
 	}
 
 	//Getters and Setters
@@ -28,6 +29,15 @@ class FotoImovel{
 	public function setPhotoLink($photoLink){
 		$this->photoLink = $photoLink;
 	}
+
+    public function getImovelId(){
+		return $this->ImovelId;
+	}
+
+	public function setImovelId($ImovelId){
+		$this->ImovelId = $ImovelId;
+	}
+
 
 }
 
