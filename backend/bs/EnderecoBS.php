@@ -12,7 +12,7 @@ class EnderecoBS{
 	//Cadastra um endereco no banco de dados
 	public function save(Endereco $endereco){
 		$query = sprintf("INSERT INTO si_endereco(rua,bairro,cidade,numero,estado,cep, complemento)
-		                  VALUES ('%s', '%s', '%s', %d, '%s', '%s','%s)",$endereco->getRua(), $endereco->getBairro(), $endereco->getCidade(),
+		                  VALUES ('%s', '%s', '%s', %d, '%s', '%s','%s' )",$endereco->getRua(), $endereco->getBairro(), $endereco->getCidade(),
 		                  $endereco->getNumero(), $endereco->getEstado(), $endereco->getCep(), $endereco->getComplemento());
 		mysql_query($query) or die(mysql_error());
 		return true;

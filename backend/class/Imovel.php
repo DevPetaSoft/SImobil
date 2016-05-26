@@ -1,6 +1,5 @@
 <?php
 
-include "FotoImovel.php";
 include "Endereco.php";
 
 class Imovel{
@@ -22,11 +21,9 @@ class Imovel{
 	private $endereco;
 	private $idImobiliaria;
 	private $codigo;
-	private $listaImagens;
 
     //Construtor padrão
 	public function __construct(){
-		$this->listaImagens = array();
 
 	}
 
@@ -160,13 +157,6 @@ class Imovel{
 		$this->codigo = $codigo;
 	}
 
-	public function getListaImagens(){
-		return $this->listaImagens;
-	}
-
-	public function setListaImagens($listaImagens){
-		$this->listaImagens = $listaImagens;
-	}
 }
 
 ?>
