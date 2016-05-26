@@ -9,8 +9,9 @@ class Login{
 	private $ultimoLogin;
 
 	//Construtor padrão
-	public function __construct(){
-
+	public function __construct($login, $senha){
+		$this->login = $login;
+		$this->senha = hash('sha512',$senha);
 	}
 
     //Getters e Setters
