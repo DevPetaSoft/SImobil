@@ -37,11 +37,18 @@ class EnderecoBS{
 
 	}
 
-    //Faz uma busca por todos os enderecos no banco
+    //Faz uma busca por todos os enderecos no banco, retorna um array de Enderecos
 	public function find(){
 		$query = "SELECT * FROM si_endereco";
         $result = mysql_query($query);
-        return $result;
+        $enderecos = array();
+        $cont = 0;
+        while($row = mysql_fetch_array($result)){
+        	$enderecos[$cont] = $this->rowToEndereco($row);
+        	$cont++;
+        }
+
+        return $enderecos;
 	}
 	/*
 	Realiza uma busca passando o id como parametro e retorna 
@@ -50,7 +57,22 @@ class EnderecoBS{
 	public function findById($id){
 		$query = sprintf("SELECT * FROM si_endereco WHERE id=%d",$id);
         $result = mysql_query($query);
-        return $result;
+        $row = mysql_fetch_assoc($result);
+        return $this->rowToEndereco($row);
+	}
+
+    //Função para converter uma linha retirada do banco de dados para o objeto Endereco
+	public function rowToEndereco($row){
+		$endereco = new Endereco();
+        $endereco->setId($row['id']);
+        $endereco->setRua($row['rua']);
+        $endereco->setBairro($row['bairro']);
+        $endereco->setCidade($row['cidade']);
+        $endereco->setNumero($row['numero']);
+        $endereco->setEstado($row['estado']);
+        $endereco->setCep($row['cep']);
+        $endereco->setComplemento($row['complemento']);
+        return $endereco;
 	}
 
 	//Caso precise implementar novas consultas, insira o codigo abaixo desse comentario
