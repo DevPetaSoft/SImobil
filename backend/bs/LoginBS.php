@@ -20,7 +20,7 @@ class LoginBS{
     
     //Altera os dados de um Endereco
 	public function update(Login $login){
-		$query = sprintf("UPDATE si_login SET login='%s', senha='%s', permicao=%d, ultimoLogin=%s WHERE id=%d",$login->getLogin(), $login->getSenha(), $login->getPermicao(), date("Y-m-d H:i:s", strtotime($login->getUltimoLogin())) ,$login->getId());
+		$query = sprintf("UPDATE si_login SET login='%s', senha='%s', permicao=%d, ultimoLogin='%s' WHERE id=%d",$login->getLogin(), $login->getSenha(), $login->getPermicao(), date("Y-m-d H:i:s", strtotime($login->getUltimoLogin())) ,$login->getId());
 		mysql_query($query) or die(mysql_error());
 		return true;
 	}
@@ -57,10 +57,8 @@ class LoginBS{
 
     //Função para converter uma linha retirada do banco de dados para o objeto Endereco
 	public function rowToLogin($row){
-		$login = new Login();
+		$login = new Login($row['login'],$row['senha']);
         $login->setId($row['id']);
-        $login->setLogin($row['login']);
-        $login->setSenha($row['senha']);
         $login->setPermicao($row['permicao']);
         $login->setUltimoLogin($row['ultimoLogin']);
         return $login;
