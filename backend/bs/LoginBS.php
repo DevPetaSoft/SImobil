@@ -18,14 +18,14 @@ class LoginBS{
 	}
 
     
-    //Altera os dados de um Endereco
+    //Altera os dados de um Login
 	public function update(Login $login){
 		$query = sprintf("UPDATE si_login SET login='%s', senha='%s', permicao=%d, ultimoLogin='%s' WHERE id=%d",$login->getLogin(), $login->getSenha(), $login->getPermicao(), date("Y-m-d H:i:s", strtotime($login->getUltimoLogin())) ,$login->getId());
 		mysql_query($query) or die(mysql_error());
 		return true;
 	}
 	
-	//Deleta um registro de endereço
+	//Deleta um registro de Login
 	public function delete($id){
 		$query = sprintf("DELETE FROM si_login WHERE id=%d",$id);
 		mysql_query($query) or die(mysql_error());
@@ -55,7 +55,7 @@ class LoginBS{
         return $this->rowToLogin($row);
 	}
 
-    //Função para converter uma linha retirada do banco de dados para o objeto Endereco
+    //Função para converter uma linha retirada do banco de dados para o objeto Login
 	public function rowToLogin($row){
 		$login = new Login($row['login'],$row['senha']);
         $login->setId($row['id']);
