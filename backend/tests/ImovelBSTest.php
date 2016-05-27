@@ -3,9 +3,9 @@
 include "../bs/ImovelBS.php";
 
 
-/*$imovel = new Imovel();
+$imovel = new Imovel();
 
-$imovel->setImobiliariaId(1);
+/*$imovel->setImobiliariaId(1);
 $imovel->setEnderecoId(1);
 $imovel->setDescricao("Excelente localizaçao");
 $imovel->setQuarto(3);
@@ -38,6 +38,6 @@ $bs = new ImovelBS();
 
 //echo $imovel->getDescricao();
 
-$bs->delete(1);
+//$bs->delete(1);
 
 ?>

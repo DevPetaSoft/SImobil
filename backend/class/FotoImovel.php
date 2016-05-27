@@ -31,11 +31,11 @@ class FotoImovel{
 	}
 
     public function getImovelId(){
-		return $this->ImovelId;
+		return $this->imovelId;
 	}
 
-	public function setImovelId($ImovelId){
-		$this->ImovelId = $ImovelId;
+	public function setImovelId($imovelId){
+		$this->imovelId = $imovelId;
 	}
 
 
