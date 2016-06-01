@@ -1,6 +1,5 @@
 <?php
 
-include "FotoImovel.php";
 include "Endereco.php";
 
 class Imovel{
@@ -19,14 +18,13 @@ class Imovel{
 	private $cozinha;
 	private $sala;
 	private $disponivel;
-	private $endereco;
-	private $idImobiliaria;
+	private $enderecoId;
+	private $mobiliariaId;
 	private $codigo;
-	private $listaImagens;
+	private $regiao;
 
     //Construtor padrão
 	public function __construct(){
-		$this->listaImagens = array();
 
 	}
 
@@ -136,20 +134,20 @@ class Imovel{
 		$this->disponivel = $disponivel;
 	}
 
-	public function getEndereco(){
-		return $this->endereco;
+	public function getEnderecoId(){
+		return $this->enderecoId;
 	}
 
-	public function setDisponivel(Endereco $endereco){
-		$this->endereco = $endereco;
+	public function setEnderecoId($enderecoId){
+		$this->enderecoId = $enderecoId;
 	}
 
-	public function getIdImobiliaria(){
-		return $this->idImobiliaria;
+	public function getImobiliariaId(){
+		return $this->imobiliariaId;
 	}
 
-	public function setIdImobiliaria($idImobiliaria){
-		$this->idImobiliaria = $idImobiliaria;
+	public function setImobiliariaId($imobiliariaId){
+		$this->imobiliariaId = $imobiliariaId;
 	}
 
 	public function getCodigo(){
@@ -160,13 +158,14 @@ class Imovel{
 		$this->codigo = $codigo;
 	}
 
-	public function getListaImagens(){
-		return $this->listaImagens;
+	public function getRegiao(){
+		return $this->regiao;
 	}
 
-	public function setListaImagens($listaImagens){
-		$this->listaImagens = $listaImagens;
+	public function setRegiao($regiao){
+		$this->regiao = $regiao;
 	}
+
 }
 
 ?>

@@ -91,9 +91,9 @@ ENGINE = InnoDB;
 -- Table `db_simobil`.`si_login`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `db_simobil`.`si_login` (
-  `id` INT NOT NULL,
+  `id` INT NOT NULL AUTO_INCREMENT,
   `login` VARCHAR(45) NOT NULL,
-  `senha` VARCHAR(45) NOT NULL,
+  `senha` VARCHAR(128) NOT NULL,
   `permicao` INT NOT NULL,
   `ultimoLogin` DATETIME NOT NULL,
   PRIMARY KEY (`id`),

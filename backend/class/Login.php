@@ -9,8 +9,9 @@ class Login{
 	private $ultimoLogin;
 
 	//Construtor padrão
-	public function __construct(){
-
+	public function __construct($login, $senha){
+		$this->login = $login;
+		$this->senha = hash('sha512',$senha);
 	}
 
     //Getters e Setters
@@ -32,7 +33,7 @@ class Login{
 		return $this->senha;
 	}
 	public function setSenha($senha){
-		$this->senha = $senha;
+		$this->senha = hash('sha512',$senha);
 	}
 
 	public function getPermicao(){
